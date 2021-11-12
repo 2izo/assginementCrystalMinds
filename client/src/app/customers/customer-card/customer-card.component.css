@@ -1,0 +1,12 @@
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
+.trash {
+  background-color: red;
+  border: red;
+}
+.update {
+  background-color: green;
+  border: green;
+}

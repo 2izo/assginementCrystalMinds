@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="card mb-4">
+    <div class="card-img-wrapper">
+      <img
+        src="{{ './assets/user.png' }}"
+        alt="{{ customer.customerFirstName }}"
+        class="card-img-top"
+      />
+      <ul class="list-inline text-center member-icons animate">
+        <li class="list-inline-item">
+          <button
+            class="btn btn-primary"
+            routerLink="/customer/{{ customer.customerID }}"
+          >
+            <i class="fa fa-user"></i>
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <button
+            class="btn btn-primary update"
+            routerLink="../customer/edit/{{ customer.customerID }}"
+          >
+            <i class="fa fa-edit"></i>
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <button
+            class="btn btn-primary trash"
+            (click)="deleteUser(customer)"
+            routerLink=""
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body p-1">
+      <h6 class="card-title text-center mb-1">
+        <i class="fa fa-user"></i>
+        {{ customer.customerFirstName }}
+      </h6>
+      <p class="card-text text-muted text-center">
+        {{ customer.addresses[0]?.country || "no country specified" }}
+      </p>
+    </div>
+  </div>
+</div>
